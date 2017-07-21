@@ -1,0 +1,27 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                
+
+                <form action="/profile/<%= userObject._id %>" method="POST">
+                    <label>Username</label>
+                    <input type="text" class="form-control" name="username" value="<%= userObject.username %>"/><br>
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password" value="" placeholder="password" required/><br>
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="name" value="<%= userObject.name %>"/><br>
+                    <label>Email</label>
+                    <input type="text" class="form-control" name="email" value="<%= userObject.email %>"/><br>
+                        <button class="btn btn-info" type="submit">Edit</button>
+
+                </form>
+                <% if (typeof message != "undefined") { %>
+                    <div class="error-message"><%= message %></div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</section>
+
+

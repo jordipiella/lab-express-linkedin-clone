@@ -1,0 +1,60 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-3">
+                    
+                        <img class="profile-img img-circle" src="<%= userObjectPublic.imageUrl %>"/><br>
+
+       
+            </div>
+            <div class="col-sm-4">
+
+                <h2><%= userObjectPublic.name %></h2>
+                <% if(logged === true){ %>
+                    <%= userObject.username %> <br>
+                    <%= userObject.email %><br><br>
+                    <%= userObject._id %><br><br>
+                    
+                
+                    <a class="btn btn-primary" href="/profile/<%= userObject._id %>/edit">Edit</a>
+                    <br><br><br>
+                    <form action="/profile/<%= userObject._id %>/new" method="POST">
+                        New Posts<br>
+                        Title:
+                        <input class="form-control" type="text" name="title" required/><br>
+                        Picture:
+                        <input class="form-control" type="text" name="picture" required/><br>
+                        <textarea class="form-control" name="description" required></textarea><br>
+                        <button class="btn btn-info" type="submit"/>Publish</button>
+                    </form>
+
+
+                <% } %>
+                    
+
+                
+            </div>
+            
+        </div>
+
+        <div class="row">
+                <h3>Latest posts</h3>
+                <% if(docs != undefined){ %>
+                    <% docs.forEach((doc)=>{ %>
+                        <div class="col-md-4">
+                            <%= doc.picture %>
+                            <h4><%= doc.title %></h4>
+                            <p><%= doc.description %></p>
+                        </div>
+                    <% }); %>
+                <% } %>
+                
+                  
+        </div>
+
+    </div>
+</section>       
+
+
+
+

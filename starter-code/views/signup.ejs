@@ -1,0 +1,38 @@
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+              <a class="btn btn-primary" href="/auth/facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Register With Facebook</a>
+                <a class="btn btn-danger" href="/auth/google"> <i class="fa fa-google" aria-hidden="true"></i> Register With Google</a>
+                <br><br>
+                <h2>Or ...</h2>
+
+
+  <form id="form" action="/signup" method="POST">
+    <label for="name">Username</label><br>
+    <input class="form-control" type="text" name="username" placeholder="AnakinSkywalker">
+
+    <br><br>
+    <label for="password">Password</label><br>
+    <input class="form-control" type="password" name="password" placeholder="DeathStar">
+    <br><br>
+    <label for="name">Name</label><br>
+    <input class="form-control" type="text" name="name" placeholder="Name">
+
+    <br><br>
+    <label for="name">Email</label><br>
+    <input class="form-control" type="text" name="email" placeholder="email">
+
+    <br><br>
+
+    <button class="btn btn-info">Create account</button>
+  </form>
+
+                <% if (typeof message != "undefined") { %>
+                    <div class="error-message"><%= message %></div>
+                <% } %>
+      </div>
+    </div>
+  </div>
+<section>

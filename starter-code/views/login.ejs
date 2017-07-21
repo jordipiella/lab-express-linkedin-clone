@@ -1,0 +1,34 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+            <h2>Login</h2>
+                <form action="/login" method="POST">
+                <div>
+                    <label for="username">Username:</label>
+                    <input class="form-control" type="text" name="username">
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input class="form-control" type="password" name="password">
+                </div>
+                <div>
+                    <br>
+                    <input class="btn btn-info" type="submit" value="Log In">
+                </div>
+                </form>
+
+                <br>
+                <p>If you do not have an account, you can <a href="/signup">register here</a></p>
+                
+                <br><br>
+                <a class="btn btn-primary" href="/auth/facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Login With Facebook</a>
+                <a class="btn btn-danger" href="/auth/google"> <i class="fa fa-google" aria-hidden="true"></i> Login With Google</a>
+                <% if (typeof message != "undefined") { %>
+                    <div class="error-message"><%= message %></div>
+                <% } %>
+
+      </div>
+    </div>
+  </div>
+<section>

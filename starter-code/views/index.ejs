@@ -1,11 +1,55 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+          <img src="./img/logo-tm.png"/>
+          <h1><%= local.title %></h1>
+          <p>
+            Welcome to <%= local.title %> <% if (typeof userSessionID != "undefined") { %>
+              <%= userSessionID.name %>
+            <% } %></p>
+
+            <% if (typeof userObject === "undefined") { %>
+              <a class="btn btn-primary" href="/signup">Signup</a>
+              <a class="btn btn-default" href="/login">Login</a>
+            <% } else { %>
+              <a class="btn btn-danger" href="/logout">Logout</a><br>  
+            <% } %>
+          </p>
+
+            
+
+            <% if (typeof message != "undefined") { %>
+              <div class="error-message"><%= message %></div>
+            <% } %>
+      </div>
+    </div>
+    <h3>Latests news</h3>
+    <div class="row">
+      <% if(posts != undefined){ %>
+        <% posts.forEach((post)=>{ %>
+            <div class="col-md-4">
+              <%= post.picture %>
+              <h4><%= post.title %></h4>
+              <p><%= post.description %></p>
+                <a href="/profile/<%= post.author.id %>"><em><%= post.author.name %></em></a>
+                <br><br>
+                <hr>
+                <br><br><br>
+            </div>
+        <% }); %>
+      
+      <% } %>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+

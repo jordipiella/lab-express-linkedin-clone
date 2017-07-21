@@ -1,0 +1,18 @@
+$font-stack:    Lucida, sans-serif;
+$primary-color: #333;
+$black-color: #000;
+$white-color: #fff;
+
+body {
+  font: 14px $font-stack;
+  color: $primary-color;
+}
+footer {
+  background-color: #444;
+  color: $white-color;
+  padding: 50px 0;
+  margin-top: 100px;
+}
+.profile-img {
+  width:200px
+}

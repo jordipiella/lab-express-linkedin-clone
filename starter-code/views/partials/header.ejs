@@ -1,0 +1,27 @@
+ <header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <a class="btn btn-info" href="/">HOME</a> 
+                
+                <p>Welcome to 
+                <% if (typeof local != "undefined") { %>
+                <%= local.title %> 
+                <% } %>
+                <% if (typeof userObject != "undefined") { %>
+                            <%= userObject.name %>
+                        <% } %></p>
+            </div>
+            <div class="col-md-6 text-right">
+
+                        <% if (typeof userObject === "undefined") { %>
+                            <a class="btn btn-primary" href="/signup">Signup</a>
+                            <a class="btn btn-default" href="/login">Login</a>
+                        <% } %> 
+                        <% if( typeof userObject != "undefined") { %>
+                            <a class="btn btn-danger" href="/logout">Logout</a><br>  
+                        <% } %></p>
+            </div>
+        </div>
+    </div>
+</header>
